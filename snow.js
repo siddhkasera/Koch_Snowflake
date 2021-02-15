@@ -5,7 +5,11 @@ var gl;
 
 var positions = [];
 
-var numTimesToSubdivide = 4;
+var numTimesToSubdivide = 5;
+var angleDegrees = 60;
+var angleRadians = angleDegrees * Math.PI / 180;
+var r1 = Math.sin(angleRadians);
+var c1 = Math.cos(angleRadians);
 
 
 window.onload = function init() {
@@ -60,12 +64,6 @@ function koch_flake(a, b, c, count) {
     divideLine(c, a, count);
 }
 function divideLine(a, b, count) {
-
-    var angleDegrees = 60;
-    var angleRadians = angleDegrees * Math.PI / 180;
-    var r1 = Math.sin(angleRadians);
-    var c1 = Math.cos(angleRadians);
-    
     // check for end of recursion
 
     if (count === 0) {
